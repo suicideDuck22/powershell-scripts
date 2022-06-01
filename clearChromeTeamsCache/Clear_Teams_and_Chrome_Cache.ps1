@@ -3,7 +3,7 @@ $LocalAppDataPath = $env:LOCALAPPDATA
 $AppDataPath = $env:APPDATA
 
 #Start the question to the user
-$challenge = Read-Host "Limpar Teams Cache (Y/N)?"
+$challenge = Read-Host "Clear Microsoft Teams and Chrome Cache? (Y/N)?"
 $challenge = $challenge.ToUpper()
 if ($challenge -eq "N"){
     Stop-Process -Id $PID
@@ -44,7 +44,7 @@ if ($challenge -eq "N"){
                     Write-Host "Folder $FullPath cleared." -ForegroundColor Green
                 }
                 False {
-                    Write-Host "Path $FullPath not found, continuing the clean process." -ForegroundColor Yellow
+                    Write-Host "Path $FullPath not found, proceeding with the clean process." -ForegroundColor Yellow
                 }
             }
         }
@@ -85,7 +85,7 @@ if ($challenge -eq "N"){
                 }
             }
         }
-        Write-Host "Google Chrome cache cleaned" -ForegroundColor Green
+        Write-Host "Google Chrome cache cleared" -ForegroundColor Green
     }catch{
         echo $_
     }
